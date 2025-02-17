@@ -4,13 +4,17 @@
   border: none;
 }
 nav{
-    background-color:rgb(8, 156, 214);
-}
+    background-color:rgba(22, 68, 167, 0.933);}
 
 section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   padding: 20px;
   margin: 30px;
+}
+
+footer{
+    background-color: #6983aa;
 }
