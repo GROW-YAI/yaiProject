@@ -1,19 +1,15 @@
-let index = 0;
-
-function showSlides() {
-    let slides = document.querySelector(".slides");
-    let totalSlides = document.querySelectorAll(".slide").length;
-
-    index = (index + 1) % totalSlides;
-    let offset = -index * 100 + "%";
-
-    slides.style.transform = "translateX(" + offset + ")";
-}
-
-
-setInterval(showSlides, 3000);
-
-
+const swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
 
 // swiper for testimonials
 let position = 0;
