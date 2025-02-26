@@ -4,12 +4,10 @@
   border: none;
   font-family: Josefin Sans, sans-serif;
 
- 
-
-  /* background-color: #ad988c; */
+  /* background-color: #4F4C44; */
 }
 
-.socials{
+.socials {
   position: fixed;
   top: 50%;
   left: 7%;
@@ -20,12 +18,12 @@
   z-index: 1000;
 }
 
-.socials a{
+.socials a {
   text-decoration: none;
 }
 
 .social-icons a:hover {
-  color: #6983aa; 
+  color: #6983aa;
 }
 nav {
   display: flex;
@@ -122,7 +120,6 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-
 }
 .swiper-slide img {
   width: 75%;
@@ -133,62 +130,141 @@ nav {
   max-width: 100%;
   height: auto;
 }
+
 .promo-section {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: white;
-  padding: 40px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
-  margin: 10px auto;
-  border-radius: 10px;
+  padding: 60px 30px;
+  background: linear-gradient(to right, #ffffff, #f3f4f6);
 }
+.promo-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  width: 100%;
+  gap: 40px;
+
+  /* background: #f8f9fa; */
+}
+
+/* Text Section */
 .promo-text {
   flex: 1;
-  padding: 20px;
-  text-align: left;
+  max-width: 500px;
 }
+
 .promo-text h2 {
-  color: #2c3e50;
-  font-size: 28px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1d3557;
+  margin-bottom: 15px;
 }
+
+.promo-text p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
 .promo-text ul {
   list-style: none;
   padding: 0;
 }
+
 .promo-text ul li {
-  margin: 10px 0;
   font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.promo-text .cta {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background:#555F50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+
+.promo-text ul li::before {
+  content: "✔";
+  color: #28a745;
   font-weight: bold;
 }
-.promo-image {
-  flex: 1;
-  text-align: center;
+
+/* CTA Button */
+.promo-text .cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #28a745;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(121, 97, 52, 0.3);
+}
+
+.promo-text .cta:hover {
+  background: #3e2724;
+  transform: translateY(-3px);
 }
 .promo-image img {
-  max-width: 100%;
+  max-width: 220px;
   height: auto;
-  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: white;
+  border: 3px solid transparent;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
+
+.promo-image img:hover {
+  /* transform: scale(1.05); */
+  border: 3px solid #28a745;
+}
+
+@media (max-width: 900px) {
+  .promo-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .promo-text {
+    max-width: 100%;
+  }
+
+  .promo-image {
+    flex-direction: column;
+  }
+
+  .promo-image img {
+    max-width: 80%;
+  }
+}
+
+/* Social Icons */
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #555;
+  font-size: 22px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #4caf50;
+}
+
 @media (max-width: 768px) {
   .promo-section {
     flex-direction: column;
     text-align: center;
   }
 }
-
-
 
 /* .innovator {
   display: flex;
@@ -212,8 +288,28 @@ nav {
   color: #333;
 } */
 
+/* catalog  and product mean the same*/
 
-/* catalog */
+.cata-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px;
+  padding: 10px 0;
+}
+
+.cata-line {
+  flex-grow: 0.38;
+  height: 1px;
+  background-color: black;
+}
+
+.cata-text {
+  color: black;
+  font-size: 30px;
+  
+}
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -221,14 +317,119 @@ nav {
   max-width: 1000px;
   margin: auto;
 }
+
 .product {
-  background: white;
-  padding: 15px;
- 
+  background: rgb(0, 0, 0);
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* From https://css.glass */
+  background: rgba(224, 224, 224, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(248, 248, 247, 0.3);
+}
+.product img {
+  max-width: 90%;
+  height: 250px;
+  border-radius: 3px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/*  */
+.product:hover img {
+  transform: scale(1.05);
+}
+
+.product h3,
+.product p {
+  margin: 10px 0;
+}
+
+.add-to-cart {
+  background: #3f3a33;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: green 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: #705737;
+}
+
+.innovator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px;
+  padding: 10px 0;
+}
+
+.inno-line {
+  flex-grow: 0.3;
+  height: 1px;
+  background-color: black;
+}
+
+.inno-text {
+  color: black;
+  font-size: 30px;
+  text-transform: uppercase;
+}
 
 
+.innovator-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px; /* Adjust width as needed */
+  margin: auto;
+  padding: 20px;
+  gap: 20px; /* Adds space between image and text */
+}
+
+.innovator-section img {
+  width: 300px; /* Adjust image size */
+  height: auto;
+  border-radius: 10px; /* Optional: adds rounded corners */
+  object-fit: cover;
+}
+
+.innovator-text {
+  flex: 1; /* Allows text to take available space */
+  text-align: left;
+}
+
+.innovator-text h3 {
+  font-size: 24px;
+  color: #333;
+}
+
+.innovator-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .innovator-section {
+      flex-direction: column; /* Stack items on smaller screens */
+      text-align: center;
+  }
+
+  .innovator-section img {
+      width: 100%; /* Full width on smaller screens */
+  }
+}
 
 

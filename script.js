@@ -11,6 +11,33 @@ const swiper = new Swiper(".mySwiper", {
     },
 });
 
+
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+
+    // Hide all tab content
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Remove active class from all buttons (if applicable)
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    // Show the selected tab content
+    document.getElementById(cityName).style.display = "block";
+
+    // Add active class to clicked button (if applicable)
+    if (evt) {
+        evt.currentTarget.classList.add("active");
+    }
+}
+
+
+
 // swiper for testimonials
 let position = 0;
 const testimonials = document.querySelectorAll(".testimonial");
