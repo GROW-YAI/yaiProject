@@ -1,5 +1,5 @@
 const swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
+    spaceBetween: 20,
     centeredSlides: true,
     autoplay: {
         delay: 7000,
@@ -12,72 +12,64 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
 
-    // Hide all tab content
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
+// testimonial slider
 
-    // Remove active class from all buttons (if applicable)
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-    }
-
-    // Show the selected tab content
-    document.getElementById(cityName).style.display = "block";
-
-    // Add active class to clicked button (if applicable)
-    if (evt) {
-        evt.currentTarget.classList.add("active");
-    }
-}
-
-
-
-// swiper for testimonials
-let position = 0;
-const testimonials = document.querySelectorAll(".testimonial");
-
-function changeTestimonial(direction) {
-    testimonials[position].classList.remove("active");
-    index = (position + direction + testimonials.length) % testimonials.length;
-    testimonials[position].classList.add("active");
-}
-
-// Function to open the form
-function openForm() {
-    document.getElementById("contactForm").style.display = "flex";
-}
-
-// Function to close the form
-function closeForm() {
-    document.getElementById("contactForm").style.display = "none";
-}
-
-
-
-// testimonialss
-
-document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper(".swiper", {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
+var swiperr = new Swiper(".slide-content", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
-  
-  
+
+
+
+  // to open form
+  function openForm() {
+    document.getElementById('contactForm').style.display='flex';
+  }
+
+  // to close form
+  function closeForm() {
+    document.getElementById("contactForm").style.display='none';
+  }
+
+
+
+  const container = document.querySelector(".testim-container");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let index = 0;
+
+nextBtn.addEventListener("click", () => {
+  if (index < 2) {
+    index++;
+  } else {
+    index = 0;
+  }
+  updateCarousel();
+});
+
+prevBtn.addEventListener("click", () => {
+  if (index > 0) {
+    index--;
+  } else {
+    index = 2;
+  }
+  updateCarousel();
+});
+
+function updateCarousel() {
+  const cardWidth = document.querySelector(".card").offsetWidth;
+  container.style.transform = `translateX(-${index * cardWidth}px)`;
+}
