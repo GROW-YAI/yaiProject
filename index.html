@@ -39,7 +39,9 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="fa-solid fa-bag-shopping"></i>
-        <span class="hamburger">&#9776;</span>
+        <span class="hamburger" id="hamburger" onclick="toggleMenu()"
+          >&#9776;</span
+        >
       </div>
     </nav>
 
@@ -114,14 +116,18 @@
               alt="Product 1"
             />
             <h3>Double Shield</h3>
-            <p>GH₵180.00</p>
-            <button class="add-to-cart">Add to cart</button>
+            <p>GH₵80.00</p>
+            <a href="https://paystack.com/buy/double-sheild-ajtukc">
+              <button>Add to cart</button></a
+            >
           </div>
           <div class="product">
             <img src="./images/product-images/image1_0.webp" alt="Product 2" />
             <h3>Total Terminator</h3>
-            <p>GH₵200.00</p>
-            <button>Add to cart</button>
+            <p>GH₵120.00</p>
+            <a href="https://paystack.com/buy/total-terminator-pvurvg">
+              <button>Add to cart</button></a
+            >
           </div>
           <div class="product">
             <img
@@ -129,50 +135,58 @@
               alt="Product 3"
             />
             <h3>Twin Force</h3>
-            <p>GH₵150.00</p>
-            <button>Add to cart</button>
+            <p>GH₵100.00</p>
+            <a href="https://paystack.com/buy/twin-force-jqixwr">
+              <button>Add to cart</button></a
+            >
           </div>
+        </div>
+        <div class="storeFront">
+          <a href="https://paystack.shop/nana-apeko">
+            <button><h4>Shop now</h4></button>
+          </a>
         </div>
       </div>
 
       <!-- Innovator Section -->
-      <div id="innovator" class="innovator-container">
-        <div class="inno-line"></div>
-        <span class="inno-text">Innovator</span>
-        <div class="inno-line"></div>
-      </div>
+      <div id="innovator" class="innovate">
+        <div class="innovator-container">
+          <div class="inno-line"></div>
+          <span class="inno-text">Innovator</span>
+          <div class="inno-line"></div>
+        </div>
 
-      <div class="innovator-section">
-        <img
-          src="./images/product-images/innovator.jpg"
-          alt="Mr. Emmanuel Amoh Nyanzu"
-          class="shifted-img"
-        />
+        <div class="innovator-section">
+          <img
+            src="./images/product-images/Emmanuel Amoh Nyamzu.png"
+            alt="Mr. Emmanuel Amoh Nyanzu"
+            class="shifted-img"
+          />
 
-        <div class="innovator-text">
-          <h3>Mr. Emmanuel Amoh Nyanzu</h3>
-          <h4>How Did This Product Come About?</h4>
-          <p>
-            This innovation started during my SHS days when I unknowingly
-            brought bedbugs home. Within weeks, they spread to nearly every
-            room, leading to repeated fumigation.
-          </p>
+          <div class="innovator-text">
+            <h3>Mr. Emmanuel Amoh Nyanzu</h3>
+            <h4>How Did This Product Come About?</h4>
+            <p>
+              This innovation started during my SHS days when I unknowingly
+              brought bedbugs home. Within weeks, they spread to nearly every
+              room, leading to repeated fumigation.
+            </p>
 
-          <p>
-            After trying several pesticides with little success, I began
-            experimenting with local materials. This led to the creation of
-            <strong>Nana Apeko Organic Pesticide</strong>.
-          </p>
+            <p>
+              After trying several pesticides with little success, I began
+              experimenting with local materials. This led to the creation of
+              <strong>Nana Apeko Organic Pesticide</strong>.
+            </p>
 
-          <h4>My Mission</h4>
-          <p>
-            Do you recall the bedbug infestation in France a few years ago? My
-            mission is to eradicate bedbugs on a large scale and provide an
-            effective, organic solution for households worldwide.
-          </p>
+            <h4>My Mission</h4>
+            <p>
+              Do you recall the bedbug infestation in France a few years ago? My
+              mission is to eradicate bedbugs on a large scale and provide an
+              effective, organic solution for households worldwide.
+            </p>
+          </div>
         </div>
       </div>
-
       <!-- Testimonials Section -->
 
       <div>
@@ -291,6 +305,7 @@
           />
           <input type="submit" value="Sign Up" id="footer-email-btn" />
         </div>
+        <h4>©JESSITRY ENTREPRISE 2025</h4>
       </div>
     </div>
 
@@ -300,15 +315,20 @@
       <div class="form-box">
         <span class="close-btn" onclick="closeForm()">✖</span>
         <h2>Contact Form</h2>
-        <form id="contactForm">
+
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/xeoaqora"
+          method="POST"
+        >
           <label for="name">Name:</label>
           <input type="text" id="name" required />
 
           <label for="email">Email:</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" name="email" required />
 
           <label for="message">Message:</label>
-          <textarea id="message" required></textarea>
+          <textarea id="message" name="message" required></textarea>
 
           <button type="submit">Send Message</button>
         </form>
