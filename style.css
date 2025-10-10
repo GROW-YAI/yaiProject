@@ -277,7 +277,7 @@ body {
   }
 }
 
-#catalog {
+/* #catalog {
   background: #fafafa;
   padding: 10px;
 }
@@ -300,7 +300,7 @@ body {
 .cata-text {
   color: black;
   font-size: 30px;
-}
+} */
 
 .product-grid {
   display: grid;
