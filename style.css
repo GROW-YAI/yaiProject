@@ -7,7 +7,7 @@
   /* background-color: #4F4C44; */
 }
 
-.socials {
+/* .socials {
   position: fixed;
   top: 50%;
   left: 7%;
@@ -25,7 +25,7 @@
 
 .socials a:hover {
   color: #07c09e;
-}
+} */
 
 nav {
   display: flex;
