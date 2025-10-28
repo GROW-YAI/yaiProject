@@ -1,3 +1,6 @@
+// ==========================
+// SWIPER INITIALIZATION
+// ==========================
 const swiper = new Swiper(".mySwiper", {
   spaceBetween: 20,
   centeredSlides: true,
@@ -11,62 +14,75 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
-// testimonial slider
-
-// to open form
+// ==========================
+// FORM OPEN/CLOSE LOGIC
+// ==========================
 function openForm() {
   document.getElementById("contactForm").style.display = "flex";
 }
 
-// to close form
 function closeForm() {
   document.getElementById("contactForm").style.display = "none";
 }
 
+// ==========================
+// TESTIMONIAL CAROUSEL
+// ==========================
 const container = document.querySelector(".testim-container");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
 let index = 0;
 
-nextBtn.addEventListener("click", () => {
-  if (index < 2) {
-    index++;
-  } else {
-    index = 0;
-  }
-  updateCarousel();
-});
+if (nextBtn && prevBtn && container) {
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % 3;
+    updateCarousel();
+  });
 
-prevBtn.addEventListener("click", () => {
-  if (index > 0) {
-    index--;
-  } else {
-    index = 2;
-  }
-  updateCarousel();
-});
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + 3) % 3;
+    updateCarousel();
+  });
 
-function updateCarousel() {
-  const cardWidth = document.querySelector(".card").offsetWidth;
-  container.style.transform = `translateX(-${index * cardWidth}px)`;
+  function updateCarousel() {
+    const cardWidth = document.querySelector(".card").offsetWidth;
+    container.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
 }
 
-// hamburger
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("active");
+// ==========================
+// HAMBURGER MENU LOGIC
+// ==========================
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  });
 }
 
-// contact us form
-// Contact Us Form
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
+// ==========================
+// CONTACT FORM SUBMISSION
+// ==========================
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    const form = this;
-    const formData = new FormData(form);
+    const formData = new FormData(contactForm);
 
-    fetch(form.action, {
+    fetch(contactForm.action, {
       method: "POST",
       body: formData,
       headers: { Accept: "application/json" },
@@ -74,7 +90,7 @@ document
       .then((response) => {
         if (response.ok) {
           alert("Thank you! Your message has been sent.");
-          form.reset();
+          contactForm.reset();
         } else {
           alert("Yikes! Something went wrong.");
         }
@@ -83,3 +99,4 @@ document
         alert("Network error! Please try again later.");
       });
   });
+}
