@@ -941,6 +941,11 @@ button {
    MOBILE MENU STYLES
    ========================= */
 @media (max-width: 768px) {
+  .nav-container {
+    /* 🛠️ ADJUSTED FIX: Increased horizontal padding to 35px */
+    padding: 0 35px; 
+  }
+
   .hamburger {
     display: flex;
   }
