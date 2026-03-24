@@ -25,10 +25,10 @@ function Catalog() {
 
   return (
     <div id="catalog">
-      <div className="cata-container">
-        <div className="cata-line"></div>
-        <span className="cata-text">CATALOG</span>
-        <div className="cata-line"></div>
+      <div className="title-container">
+        <div className="line"></div>
+        <span className="title-text">CATALOG</span>
+        <div className="line"></div>
       </div>
       <div className="product-grid">
         {products.map((product) => (
