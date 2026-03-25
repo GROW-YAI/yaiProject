@@ -7,17 +7,16 @@ function About() {
         <div className="line"></div>
       </div>
       <div className="promo-section">
-        <div className="promo-content">
-          <div className="promo-text">
-            <h2>Nana Apeko Bedbug Spray and Powder</h2>
-            <p>
-              A powerful organic solution to eliminate bedbugs and household
-              pests.
-            </p>
-            <ul>
-              <li>100% Natural Ingredients</li>
-              <li>Safe for Home Use</li>
-              <li>Effective Against Bedbugs, Cockroaches & Mosquitoes</li>
+  <div className="promo-content text-left">   {/* added text-left */}
+    <div className="promo-text">
+      <h2 className="text-left">Nana Apeko Bedbug Spray and Powder</h2>
+      <p>
+        A powerful organic solution to eliminate bedbugs and household pests.
+      </p>
+      <ul>
+        <li>100% Natural Ingredients</li>
+        <li>Safe for Home Use</li>
+        <li>Effective Against Bedbugs, Cockroaches & Mosquitoes</li>
             </ul>
             <a href="#" className="cta">Learn More</a>
           </div>

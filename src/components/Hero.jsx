@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 function Hero() {
   const swiperRef = useRef(null);
@@ -7,6 +10,7 @@ function Hero() {
   useEffect(() => {
     if (swiperRef.current) {
       new Swiper(swiperRef.current, {
+        modules: [Autoplay, Pagination],
         spaceBetween: 20,
         centeredSlides: true,
         autoplay: {
