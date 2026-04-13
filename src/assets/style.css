@@ -3,6 +3,7 @@
   padding: 0;
   border: none;
   font-family: Josefin Sans, sans-serif;
+  box-sizing: border-box;
 
   /* background-color: #4F4C44; */
 }
@@ -58,6 +59,7 @@ nav {
   background: linear-gradient(to left, #4caf50 20%, #0bcabd 80%);
   z-index: 1000;
   position: fixed;
+  top: 60px;
 }
 
 .logo {
@@ -125,8 +127,17 @@ nav {
   }
 }
 
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   padding-top: 80px;
+  box-sizing: border-box;
 }
 
 .title-container {
